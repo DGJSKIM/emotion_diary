@@ -105,6 +105,21 @@ const DiaryEditor = () => {
                         ))}
                     </div>
                 </section>
+                <section>
+                    <h4>오늘의 일기</h4>
+                    <div className='input_box text_wrapper'>
+                        <textarea
+                            ref={contentRef}
+                            value={content}
+                            onChange={(e)=>setContent(e.target.value)}/>
+                    </div>
+                </section>
+                <section>
+                    <div className="control_box">
+                        <MyButton text={"취소하기"} onClick={()=>navigate(-1)}/>
+                        <MyButton text={"작성완료"} type={"positive"} onClick={handleSubmit}/>
+                    </div>
+                </section>
             </div>
         </div>
     );
