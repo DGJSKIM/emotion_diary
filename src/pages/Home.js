@@ -9,7 +9,10 @@ const Home = () => {
     const [data, setData] = useState([]);
     const [curDate, setCurDate] = useState(new Date()); // 현재시각 초기값
     const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`; // getMonth 는 1월을 0 으로 가져옴
-
+    useEffect(() => {
+        const titleElement = document.getElementsByTagName('title')[0];
+        titleElement.innerHTML = `감정 일기장`
+    }, []);
     useEffect(() => {
         if(diaryList.length >= 1) {
             const firstDay = new Date(
